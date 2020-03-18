@@ -1,5 +1,7 @@
 # vue-visible-focus
 
+This component attempts to emulate the [:focus-visible pseudoselector](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) behavior using similar heuristics.
+
 ## Project setup
 ```
 yarn install
