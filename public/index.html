@@ -6,6 +6,30 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      body {
+        background: steelblue;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+  
+      main {
+        background: white;
+        border-radius: 6px;
+        max-width: 500px;
+        padding: 0 20px;
+        text-align: center;
+      }
+  
+      [data-focus-visible="false"] * {
+        outline: none;
+      }
+    </style>
   </head>
   <body>
     <noscript>
