@@ -1,7 +1,9 @@
 {
   "name": "vue-visible-focus",
   "version": "0.0.1",
-  "private": true,
+  "description": "A Vue component that emulates the :focus-visible spec",
+  "repository": "github:filoxo/vue-visible-focus",
+  "homepage": "https://filoxo.github.io/vue-visible-focus/",
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-visible-focus src/VisibleFocus.vue",
