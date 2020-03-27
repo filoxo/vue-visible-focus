@@ -1,11 +1,12 @@
 describe('VisibleFocus', () => {
+  const none = /none/i
+  const notNone = /^((?!none).)*$/i
 
   beforeEach(() => {
     cy.visit("/");
   })
   
   describe('hides focus ring when clicking', () => {
-    const none = /none/i
     
     it('on a focusable element (button)', () => {
       cy.findByText('A button').should('exist').click()
@@ -19,7 +20,6 @@ describe('VisibleFocus', () => {
   })
 
   describe('shows focus ring when', () => {
-    const notNone = /^((?!none).)*$/i
 
     it('clicking on an input element', () => {
       cy.findByPlaceholderText('An input').should('exist').click()
@@ -45,6 +45,13 @@ describe('VisibleFocus', () => {
       cy.focused().should('have.css', 'outline').and('match', notNone)
       cy.focused().type('{leftarrow}')
       cy.focused().should('have.css', 'outline').and('match', notNone)
+    })
+
+    it('switching from mouse to keyboard modality', () => {
+      cy.findByText(/focusable subheader/i).focus ()
+      cy.focused().should('have.css', 'outline').and('match', notNone)
+      cy.focused().click()
+      cy.focused().should('have.css', 'outline').and('match', none)
     })
   })
 } )
