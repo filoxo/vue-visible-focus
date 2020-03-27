@@ -6,9 +6,14 @@
   "homepage": "https://filoxo.github.io/vue-visible-focus/",
   "scripts": {
     "start": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-visible-focus src/VisibleFocus.vue",
-    "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint --fix"
+    "build": "vue-cli-service build --target lib src/VisibleFocus.vue",
+    "test": "vue-cli-service test:e2e --headless",
+    "test:watch": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint --fix",
+    "build:demo": "vue-cli-service build --dest demo --modern",
+    "prepublishOnly": "yarn run-s test build:demo",
+    "predeploy": "yarn prepublishOnly",
+    "deploy": "gh-pages --dist demo --src '{index.html,dist/**/*}' --git git"
   },
   "dependencies": {
     "core-js": "^3.6.4",
