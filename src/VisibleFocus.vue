@@ -4,6 +4,7 @@
     :data-focus-visible="focusVisible.toString()"
     v-on:mousedown="onMouseDown"
     v-on:keydown="onKeyDown"
+    v-on:focusin="onFocusIn"
   >
     <slot />
   </component>
@@ -20,21 +21,26 @@ export default {
   },
   data: function() {
     return {
+      kbdHeuristic: true,
       focusVisible: false
     };
   },
   methods: {
-    onMouseDown: function(e) {
-      this.$data.focusVisible = e.target.nodeName === "INPUT";
+    onMouseDown(e) {
+      this.$data.focusVisible = this.$data.kbdHeuristic =
+        e.target.nodeName === "INPUT";
     },
-    onKeyDown: function(e) {
-      this.$data.focusVisible = [
+    onKeyDown(e) {
+      this.$data.kbdHeuristic = [
         "Tab",
         "ArrowUp",
         "ArrowDown",
         "ArrowRight",
         "ArrowLeft"
       ].includes(e.key);
+    },
+    onFocusIn() {
+      this.$data.focusVisible = this.$data.kbdHeuristic;
     }
   }
 };
