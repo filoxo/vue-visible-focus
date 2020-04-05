@@ -1,6 +1,6 @@
 {
   "name": "vue-visible-focus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Vue component that emulates the :focus-visible spec",
   "repository": "github:filoxo/vue-visible-focus",
   "homepage": "https://filoxo.github.io/vue-visible-focus/",
