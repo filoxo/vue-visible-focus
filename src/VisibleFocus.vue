@@ -41,6 +41,7 @@ export default {
     },
     onFocusIn() {
       this.$data.focusVisible = this.$data.kbdHeuristic;
+      this.$data.kbdHeuristic = true;
     }
   }
 };
