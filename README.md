@@ -22,14 +22,15 @@ npm i -S vue-visible-focus
 </template>
 
 <script>
-import FocusVisible from "vue-visible-focus";
+import FocusVisible from "vue-visible-focus"
+import "vue-visible-focus/dist/vue-visible-focus.css" // or include `[data-focus-visible="false"] * { outline: none; }` in your own styles
 
 export default {
   name: "YourApp",
   components: {
-    FocusVisible
-  }
-};
+    FocusVisible,
+  },
+}
 </script>
 ```
 
@@ -39,29 +40,29 @@ or via CDN
 <script src="https://unpkg.com/vue"></script>
 <script src="/vue-visible-focus.umd.js"></script>
 
-<link rel="stylesheet" href="./vue-visible-focus.css">
+<link rel="stylesheet" href="./vue-visible-focus.css" />
 
 <div id="app">
   <demo></demo>
 </div>
 
 <script>
-new Vue({
-  components: {
-    demo: vue-visible-focus
-  }
-}).$mount('#app')
+  new Vue({
+    components: {
+      demo: vue - visible - focus,
+    },
+  }).$mount("#app")
 </script>
 ```
 
 ## Props
 
 | prop name | default value | description                                               |
-|---        |---            |---                                                        |
+| --------- | ------------- | --------------------------------------------------------- |
 | elem      | "div"         | the wrapping element type to be rendered                  |
 | ...rest   |               | any additional props are forwarded to the wrapper element |
 
-## Development 
+## Development
 
 Run `yarn start` to run the example page with livereloading enabled.
 
