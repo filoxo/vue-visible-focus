@@ -12,13 +12,33 @@ yarn add -S vue-visible-focus
 npm i -S vue-visible-focus
 ```
 
-## Import
+## Usage
+
+### Register as a global component
+
+In your project's `main.js` file
+
+```js
+import Vue from "vue"
+import App from "./App.vue"
+// import FocusVisible
+import FocusVisible from "vue-visible-focus"
+
+// Register as a global component
+Vue.component("focus-visible", FocusVisible)
+
+new Vue({
+  render: (h) => h(App),
+}).$mount("#app")
+```
+
+### Import in a single component
 
 ```vue
 <template>
-  <FocusVisible elem="main">
+  <focus-visible elem="main">
     // more components
-  </FocusVisible>
+  </focus-visible>
 </template>
 
 <script>
@@ -28,7 +48,7 @@ import "vue-visible-focus/dist/vue-visible-focus.css" // or include `[data-focus
 export default {
   name: "YourApp",
   components: {
-    FocusVisible,
+    "focus-visible": FocusVisible,
   },
 }
 </script>
