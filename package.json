@@ -4,6 +4,8 @@
   "description": "A Vue component that emulates the :focus-visible spec",
   "repository": "github:filoxo/vue-visible-focus",
   "homepage": "https://filoxo.github.io/vue-visible-focus/",
+  "main": "dist/vue-visible-focus.common.js",
+  "browser": "dist/vue-visible-focus.umd.js",
   "files": [
     "dist"
   ],
