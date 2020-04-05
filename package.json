@@ -4,15 +4,18 @@
   "description": "A Vue component that emulates the :focus-visible spec",
   "repository": "github:filoxo/vue-visible-focus",
   "homepage": "https://filoxo.github.io/vue-visible-focus/",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib src/VisibleFocus.vue",
+    "build:demo": "vue-cli-service build --dest demo --modern",
     "test": "vue-cli-service test:e2e --headless",
     "test:watch": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint --fix",
-    "build:demo": "vue-cli-service build --dest demo --modern",
-    "prepublishOnly": "yarn run-s test build:demo",
-    "predeploy": "yarn prepublishOnly",
+    "prepublishOnly": "yarn run-s test build",
+    "predeploy": "yarn run-s test build build:demo",
     "deploy": "gh-pages --dist demo --src '{index.html,dist/**/*}' --git git"
   },
   "dependencies": {
